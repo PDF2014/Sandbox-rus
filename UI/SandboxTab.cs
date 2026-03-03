@@ -18,6 +18,7 @@ namespace Sandbox.UI {
         private static PowerButton _disableCultureTraitsButton;
         private static PowerButton _disableLanguageTraitsButton;
         private static PowerButton _disableReligionTraitsButton;
+        private static PowerButton _forceCapitalButton;
         private static PowerButton _forceCityKingdomButton;
         private static PowerButton _forcePlotButton;
         private static PowerButton _forceUnitCity;
@@ -56,6 +57,7 @@ namespace Sandbox.UI {
             _tab.AddPowerButton(UnitManipulation, _forceUnitJobButton);
             _tab.AddPowerButton(KingdomManipulation, _forceCityKingdomButton);
             _tab.AddPowerButton(KingdomManipulation, _forcePlotButton);
+            _tab.AddPowerButton(KingdomManipulation, _forceCapitalButton);
             _tab.AddPowerButton(CityManipulation, _mergeCitiesButton);
             _tab.AddPowerButton(CityManipulation, _pToPSettleCityButton);
             _tab.AddPowerButton(CityManipulation, _directSettleCityButton);
@@ -124,6 +126,10 @@ namespace Sandbox.UI {
                 .SetIcon("ui/icons/building_constructor_icon")
                 .SetWindowId("building_constructor")
                 .Build(out _buildingConstructorButton)
+                .Next("force_capital", ButtonStyle.Small)
+                .SetIcon("ui/icons/force_unit_king_icon")
+                .SetGodPower("force_capital")
+                .Build(out _forceCapitalButton)
                 .Next("force_unit_city", ButtonStyle.SpecialRedBorder)
                 .SetIcon("ui/icons/force_unit_city_icon")
                 .SetWindowId("force_unit_city")
